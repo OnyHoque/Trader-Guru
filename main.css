@@ -1,0 +1,23 @@
+html,
+body {
+  height: 100%;
+}
+
+.app1{
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 5px solid black;
+}
+
+.col_config{
+    max-width: 500px;
+}
+
+.bgr{
+    background-color: red;
+}
+
+table, th, td{
+    text-align: center;
+}
