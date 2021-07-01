@@ -1,23 +1,36 @@
 html,
 body {
-  height: 100%;
+    height: 100%;
+    background-color: #292929;
+    color: #8F8F8F;
+    font-family: Helvetica, Arial, Helvetica, sans-serif;
 }
 
-.app1{
+.app1 {
     padding: 20px;
     margin: 10px;
-    border-radius: 10px;
-    border: 5px solid black;
+    margin-top: 50px;
+    border-radius: 15px;
+    border: 5px solid #E45004;
 }
 
-.col_config{
+.col_config {
     max-width: 500px;
 }
 
-.bgr{
+.bgr {
     background-color: red;
 }
 
-table, th, td{
+table,
+th,
+td {
     text-align: center;
+}
+
+h3 {
+    color: #f85503;
+    font-weight: 500;
+    font-size: 3rem;
+    padding: 20px;
 }
