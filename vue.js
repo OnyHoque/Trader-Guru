@@ -2,27 +2,27 @@ var obj = new Vue({
     el: '#VueApp',
     data: {
         message: 'Hello Vue!',
-        buy_price: '0',
-        sell_price: '0',
-        investment: '0',
-        profit: 'Press calculate!',
-        profit_percentage: 'Press calculate!',
+        buy_price: '',
+        sell_price: '',
+        investment: '',
+        profit: 'Press button!',
+        profit_percentage: 'Press button!',
         asset1: ['Asset 1', 0, 0],
         asset2: ['Asset 2', 0, 0],
         asset3: ['Asset 3', 0, 0],
         asset4: ['Asset 4', 0, 0],
-        investment_amount: '0',
-        best_investment: 'press find out!',
+        investment_amount: '',
+        best_investment: 'press button!',
         list_buy: [],
         list_sell: [],
-        avg_price: 'Press calculate average price!',
+        avg_price: 'Press button!',
         temp1: '0',
         temp2: '0',
         temp3: '0',
         temp4: '0',
     },
     methods: {
-        get_profit: function (event) {
+        get_profit: function(event) {
             if (obj.buy_price == 0) {
                 alert('Please enter buying price, selling price, and investment amount!')
                 return;
@@ -36,7 +36,7 @@ var obj = new Vue({
             obj.profit_percentage = String(obj.profit * 100 / obj.investment) + "%";
         },
 
-        investment_finder: function (event) {
+        investment_finder: function(event) {
             var prof1 = getProfit(obj.asset1[1], obj.asset1[2], obj.investment_amount);
             var prof2 = getProfit(obj.asset2[1], obj.asset2[2], obj.investment_amount);
             var prof3 = getProfit(obj.asset3[1], obj.asset3[2], obj.investment_amount);
@@ -56,15 +56,15 @@ var obj = new Vue({
             }
         },
 
-        append_buy: function (event) {
+        append_buy: function(event) {
             obj.list_buy.push([obj.temp1, obj.temp2, obj.list_buy.length]);
         },
 
-        append_sell: function (event) {
+        append_sell: function(event) {
             obj.list_sell.push([obj.temp3, obj.temp4, obj.list_sell.length]);
         },
 
-        calculate_avg: function (event) {
+        calculate_avg: function(event) {
             var price = 0;
             var units = 0;
             for (let i = 0; i < obj.list_buy.length; i++) {
@@ -77,13 +77,13 @@ var obj = new Vue({
                 price -= unit[0] * unit[1];
                 units -= unit[1];
             }
-            obj.avg_price = String(price/units)+" price:" + String(price) + "units: " + String(units);
+            obj.avg_price = String(price / units) + " price:" + String(price) + "units: " + String(units);
         },
 
-        remove_buy: function(id){
+        remove_buy: function(id) {
             var temp = [];
             for (let i = 0; i < obj.list_buy.length; i++) {
-                if(i != id){
+                if (i != id) {
                     temp.push([obj.list_buy[i][0], obj.list_buy[i][1], i])
                 }
             }
@@ -91,10 +91,10 @@ var obj = new Vue({
             delete temp;
         },
 
-        remove_sell: function(id){
+        remove_sell: function(id) {
             var temp = [];
             for (let i = 0; i < obj.list_sell.length; i++) {
-                if(i != id){
+                if (i != id) {
                     temp.push([obj.list_sell[i][0], obj.list_sell[i][1], i])
                 }
             }
